@@ -1,18 +1,39 @@
 import React, { Component } from 'react';
-import Donor from '../components/donor';
+
+import DonorListItem from '../components/DonorListItem';
+// import { getSelectedDonor } from '../actions/action_donors';
+
 import { connect } from 'react-redux';
+// import { bindActionCreators } from 'redux';
 
 import { Container, Row, Col } from 'reactstrap';
 
 class DonorList extends Component {
+
+  state = {
+    id: '',
+    name: '',
+    address_1: '',
+    address_2: '',
+    city_town: '',
+    state: '',
+    zip_code: '',
+    phone: '',
+    email: '',
+    comments: ''
+  }
+  
   render () {
 
     let donors;
+
     if(this.props.donors) {
       donors = this.props.donors.map(donor => {
         return (
           <Col md="4" key={donor.id}>
-            <Donor donor={donor}/>
+            <DonorListItem
+              donor={donor}
+            />
           </Col>
         )
       })
@@ -20,12 +41,13 @@ class DonorList extends Component {
       donors = <div>Loading...</div>
     }
 
-    console.log('props in donorlist', this.props);
     return (
       <div>
         <Container>
           <Row>
-            {donors}
+            <Col>
+              {donors}
+            </Col>
           </Row>
         </Container>
       </div>
@@ -38,4 +60,5 @@ function mapStateToProps(state, props) {
     donors: state.donors
   }
 }
+
 export default connect(mapStateToProps, null)(DonorList);

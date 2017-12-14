@@ -1,1 +1,14 @@
+.nav-bar-container {
+  margin-bottom: 10px;
+}
 
+.donor-list-item {
+  border: 1px solid grey;
+  padding-left: 15px;
+  background-color: #eee;
+  width: 100%;
+}
+
+.btn-create-dlView {
+  width: 100%;
+}
