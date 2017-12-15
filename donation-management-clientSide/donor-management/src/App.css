@@ -3,7 +3,9 @@
 }*/
 
 .btns-home-add-new {
-
+  width: 150px;
+  height: 50px;
+  margin: 15px auto;
 }
 
 .btn-DonorListView-create-donor {
@@ -13,8 +15,31 @@
   vertical-align:middle;
 }
 
-.nav-bar-container {
-  margin-bottom: 10px;
+.btn-CreateNewGift-create {
+  margin: 15px 40%;
+  width: 20%;
+  vertical-align:middle;
+  padding: 5px;
+}
+
+.btn-submit-new-gift {
+  float: right;
+  width: 150px;
+}
+
+.btn-CreateNewDonor-submit {
+  float: right;
+  width: 150px;
+}
+
+.btns-donor-detail-edit-remove {
+  margin: 10px 10px 25px 10px;
+  flex:initial;
+}
+
+.btns-donor-detail {
+  width: 49%;
+  justify-content: space-around;
 }
 
 .donor-list-title {
@@ -51,10 +76,6 @@
   margin-bottom: 0.5em;
 }
 
-.donor-details-section {
-
-}
-
 .donor-detail-table {
   border: 2px solid grey;
 }
@@ -75,20 +96,6 @@
   font-size: .6em;
 }
 
-td {
-  font-size: .8em;
-}
-
-.btns-donor-detail-edit-remove {
-  margin: 10px 10px 25px 10px;
-  flex:initial;
-}
-
-.btns-donor-detail {
-  width: 49%;
-  justify-content: space-around;
-}
-
 .donor-gift-table {
   border: 2px solid grey;
 }
@@ -99,4 +106,53 @@ td {
 
 .donor-gift-table-body {
   text-align: center;
+}
+
+.form-container {
+  margin: 10px 10% 25px 10%;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 15px 10px 40px 10px;
+  background-color: #eeeeee;
+}
+
+.nav-bar-container {
+  margin-bottom: 25px !important;
+}
+
+.nav-bar-color {
+  background-color: lightblue;
+  /*margin-bottom: 0px !important;*/
+}
+
+.navbar-brand-logo {
+  font-size: 22px !important;
+}
+
+.navbar-links {
+  color: black !important;
+}
+
+td {
+  font-size: .8em;
+}
+
+.title-create-edit-form {
+  text-align: center;
+  margin: 20px 0;
+}
+
+  #sub-title {
+    color: red;
+  }
+
+.home-welcome-title {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.btns-container-home {
+  border: 1px solid grey;
+  margin-top: 20px;
+background-color: #eee;
 }

@@ -1,10 +1,15 @@
 import React from 'react';
-import { connect } from 'react-redux';
+
 import { Link } from 'react-router-dom';
 import { Table, Button } from 'reactstrap';
+import { selectedDonor } from '../actions/action_donors';
+import { removeDonor } from '../actions/action_donors';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-const DonorDetail = ({selectedDonor}) => {
-  // console.log('Donor Detail-Selected', selectedDonor);
+
+const DonorDetail = ({selectedDonor, removeDonor}) => {
+  console.log('Donor Detail-Selected', removeDonor);
 
   return (
 
@@ -73,7 +78,13 @@ const DonorDetail = ({selectedDonor}) => {
           >
               Edit Donor
           </Link>{' '}
-          <Button className="btns-donor-detail" color="secondary">Remove Donor</Button>{' '}
+          <Button
+            className="btns-donor-detail"
+            color="secondary"
+            onClick={() => removeDonor(selectedDonor.id)}
+          >
+              Remove Donor
+          </Button>{' '}
         </div>
       </div>
 
@@ -118,5 +129,10 @@ function mapStateToProps(state, props) {
   }
 }
 
+function mapDispatchToProps(dispatch) {
+  return {
+    removeDonor: bindActionCreators(removeDonor, dispatch)
+  }
+}
 
-export default connect(mapStateToProps, null)(DonorDetail);
+export default connect(mapStateToProps, mapDispatchToProps)(DonorDetail);

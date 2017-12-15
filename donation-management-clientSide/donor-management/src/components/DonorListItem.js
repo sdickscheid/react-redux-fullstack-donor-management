@@ -11,7 +11,9 @@ class DonorListItem extends Component {
         <p
           key={this.props.donor.id}
           onClick={() => this.props.getSelectedDonor(this.props.donor.id)}
-          className="donor-list-item">{this.props.donor.name}
+          className="donor-list-item"
+        >
+            {this.props.donor.name}
         </p>
       </div>
     );

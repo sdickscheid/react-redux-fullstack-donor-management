@@ -6,16 +6,16 @@ export default class CreateNewGift extends React.Component {
   render() {
     return (
       <Container>
-        <h3>Create a New Gift</h3>
-        <h4>A valid donor entry is required to create a new gift</h4>
+        <h3 className="title-create-edit-form">Create a New Gift</h3>
+        <h4 id="sub-title" className="title-create-edit-form">A valid donor entry is required to create a new gift</h4>
         <Link
-          className="btn btn-secondary"
+          className="btn btn-secondary btn-CreateNewGift-create"
           to={"/create-new-donor"}
         >
           Create New Donor
         </Link>
 
-        <Form>
+        <Form className="form-container">
           <FormGroup>
             <Label for="donor_id">Donor ID</Label>
             <Input type="text" name="donor_id" id="id_donor_id" />
@@ -47,7 +47,7 @@ export default class CreateNewGift extends React.Component {
             <Input type="text" name="state" id="id_state" />
           </FormGroup>
 
-          <Button>Submit New Gift</Button>
+          <Button className="btn-submit-new-gift">Submit New Gift</Button>
         </Form>
       </Container>
     );

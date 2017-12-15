@@ -3,7 +3,7 @@ import './App.css';
 import TopNavBar from './components/TopNavBar';
 import Home from './components/Home';
 import DonorListView from './components/DonorListView';
-import DonationList from './components/DonationList';
+import DonationList from './components/GiftList';
 import CreateNewDonor from './containers/CreateNewDonor';
 import EditDonorForm from './containers/EditDonorForm';
 import CreateNewGift from './containers/CreateNewGift';
@@ -29,8 +29,7 @@ class App extends Component {
       <Router>
         <div>
           <TopNavBar />
-          <hr />
-
+    
           <Route exact path="/" component={Home}/>
           <Route path="/donor-list" component={DonorListView}/>
           <Route path="/donation-list" component={DonationList}/>

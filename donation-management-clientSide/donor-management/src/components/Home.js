@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 const Home = (props) => {
   return (
@@ -11,11 +12,19 @@ const Home = (props) => {
       </Row>
 
       <Row>
-        <Col>
-          <Button className="btns-home-add-new">Add New Donor</Button>
-        </Col>
-        <Col>
-          <Button>Add New Gift</Button>
+        <Col sm="12" md="5" md="offset-0" className="btns-container-home">
+          <Row>
+            <Link
+              className="btn btn-secondary btns-home-add-new"
+              to={"/create-new-donor"}
+            >Add New Donor</Link>
+          </Row>
+          <Row>
+            <Link
+              className="btn btn-secondary btns-home-add-new"
+              to={"/create-new-gift"}
+            >Add New Gift</Link>
+          </Row>
         </Col>
       </Row>
     </Container>
