@@ -14,6 +14,7 @@ export default(state = initialState, action) => {
 
     case EDIT_DONOR_SUCCESS:
     console.log('editDonor REDUCER SUCCESS', "...iGOTCHA");
+      console.log(action.payload.data);
       return [...action.payload.data];
 
     default:

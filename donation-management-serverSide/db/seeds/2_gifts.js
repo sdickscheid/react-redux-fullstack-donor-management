@@ -45,13 +45,6 @@ exports.seed = function(knex, Promise) {
 
         {donor_id: 17, donor_name: 'Kirsten Blume', program: 'Hunger', gift_amount: '$500.00', gift_date: '12/28/2017', transaction_type: 'Check', receipt_status: 'Not Provided'},
 
-
-
-
-
-
-
-
       ]);
     });
 };

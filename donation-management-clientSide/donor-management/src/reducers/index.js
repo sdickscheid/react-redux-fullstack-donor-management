@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
   selectedDonor: reducer_selectedDonor,
   removeDonor: reducer_removeDonor,
   editDonor: reducer_editDonor,
-  getAllDonorGifts: reducer_donorGifts
+  donorGifts: reducer_donorGifts
 });
 
 export default rootReducer;

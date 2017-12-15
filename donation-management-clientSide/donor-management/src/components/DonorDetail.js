@@ -9,7 +9,6 @@ import { connect } from 'react-redux';
 
 
 const DonorDetail = ({selectedDonor, removeDonor}) => {
-  console.log('Donor Detail-Selected', removeDonor);
 
   return (
 
@@ -74,7 +73,7 @@ const DonorDetail = ({selectedDonor, removeDonor}) => {
           <Link
             className="btns-donor-detail btn btn-secondary"
             color="secondary"
-            to={"/edit-donor"}
+            to={`/edit-donor/${selectedDonor.id}`}
           >
               Edit Donor
           </Link>{' '}

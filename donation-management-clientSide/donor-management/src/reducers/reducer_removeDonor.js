@@ -13,7 +13,7 @@ export default(state = initialState, action) => {
 
     case REMOVE_DONOR_SUCCESS:
       console.log('get success', action);
-      return [...state.payload.data];
+      return [...action.payload.data];
 
     default:
       return state;

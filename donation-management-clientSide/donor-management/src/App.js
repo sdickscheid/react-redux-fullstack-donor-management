@@ -11,6 +11,7 @@ import EditGiftForm from './containers/EditGiftForm';
 
 import { connect } from 'react-redux';
 import { getAllDonors } from './actions/action_donors';
+import { getAllDonorGifts } from './actions/action_gifts';
 import { bindActionCreators } from 'redux';
 import {
   BrowserRouter as Router,
@@ -22,6 +23,7 @@ import {
 class App extends Component {
   componentWillMount() {
     this.props.getAllDonors();
+    this.props.getAllDonorGifts();
   }
 
   render () {
@@ -29,12 +31,12 @@ class App extends Component {
       <Router>
         <div>
           <TopNavBar />
-    
+
           <Route exact path="/" component={Home}/>
           <Route path="/donor-list" component={DonorListView}/>
           <Route path="/donation-list" component={DonationList}/>
           <Route path="/create-new-donor" component={CreateNewDonor}/>
-          <Route path="/edit-donor" component={EditDonorForm}/>
+          <Route path="/edit-donor/:id" component={EditDonorForm}/>
           <Route path="/create-new-gift" component={CreateNewGift}/>
           <Route path="/edit-gift" component={EditGiftForm}/>
         </div>
@@ -45,7 +47,9 @@ class App extends Component {
 
 function mapDispatchToProps(dispatch) {
   return {
-    getAllDonors: bindActionCreators(getAllDonors, dispatch)
+    getAllDonors: bindActionCreators(getAllDonors, dispatch),
+    getAllDonorGifts: bindActionCreators(getAllDonorGifts, dispatch)
   }
 }
+
 export default connect(null, mapDispatchToProps)(App);

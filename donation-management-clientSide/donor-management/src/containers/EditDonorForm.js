@@ -1,29 +1,33 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText, Container, Row, Col } from 'reactstrap';
-import { addDonor } from '../actions/action_donors';
+import { editDonor, getSelectedDonor } from '../actions/action_donors';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 class EditDonorForm extends Component {
 
   state = {
-    name: '',
-    address_1: '',
-    address_2: '',
-    city_town: '',
-    state: '',
-    zip_code: '',
-    phone: '',
-    email: '',
-    program_interests: '',
-    comments: ''
+    name: this.props.selectedDonor && this.props.selectedDonor.name,
+    address_1: this.props.selectedDonor && this.props.selectedDonor.address_1,
+    address_2: this.props.selectedDonor && this.props.selectedDonor.address_2,
+    city_town: this.props.selectedDonor && this.props.selectedDonor.city_town,
+    state: this.props.selectedDonor && this.props.selectedDonor.state,
+    zip_code: this.props.selectedDonor && this.props.selectedDonor.zip_code,
+    phone: this.props.selectedDonor && this.props.selectedDonor.phone,
+    email: this.props.selectedDonor && this.props.selectedDonor.email,
+    program_interests: this.props.selectedDonor && this.props.selectedDonor.program_interests,
+    comments: this.props.selectedDonor && this.props.selectedDonor.comments
+  }
+  componentDidMount(){
+    this.props.getSelectedDonor(this.props.match.params.id);
   }
 
   handleSubmit = (e) => {
   e.preventDefault()
-  this.props.addDonor(this.state)
+  this.props.editDonor(this.props.match.params.id, this.state)
+  window.location.href = window.location.origin + "/donor-list"
   // v_ the below clears the form inputs after submission
-  this.setState({ name: '', address_1: '', address_2: '', city_town: '', state: '', zip_code: '', phone: '', email: '', program_interests: '', comments: ''})
+  // this.setState({ name: '', address_1: '', address_2: '', city_town: '', state: '', zip_code: '', phone: '', email: '', program_interests: '', comments: ''})
   }
 
   render() {
@@ -154,10 +158,17 @@ class EditDonorForm extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
+function mapStateToProps(state, props) {
   return {
-    addDonor: bindActionCreators(addDonor, dispatch)
+    selectedDonor: state.selectedDonor
   }
 }
 
-export default connect(null, mapDispatchToProps)(EditDonorForm)
+function mapDispatchToProps(dispatch) {
+  return {
+    editDonor: bindActionCreators(editDonor, dispatch),
+    getSelectedDonor: bindActionCreators(getSelectedDonor, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditDonorForm)

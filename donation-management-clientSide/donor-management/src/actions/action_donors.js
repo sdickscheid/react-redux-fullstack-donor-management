@@ -51,7 +51,7 @@ export const removeDonor = (id) => {
   return async (dispatch) => {
     console.log('DISPATCH', removeDonor);
     dispatch({ type: REMOVE_DONOR_PENDING })
-    let deletedDonor = await axios.post(`http://localhost:8000/donor/delete/${id}`)
+    let deletedDonor = await axios.delete(`http://localhost:8000/donor/delete/${id}`)
     dispatch({
       type: REMOVE_DONOR_SUCCESS,
       payload: deletedDonor,
@@ -59,10 +59,12 @@ export const removeDonor = (id) => {
   }
 }
 
-export const editDonor = (id) => {
+export const editDonor = (id, updatedDonor) => {
+  console.log(updatedDonor);
   return async (dispatch) => {
     dispatch({ type: EDIT_DONOR_PENDING })
-    let donor = await axios.patch(`http://localhost:8000//donor/edit/${id}`)
+    console.log("*****(***)", updatedDonor);
+    let donor = await axios.post(`http://localhost:8000/donor/update/${id}`, updatedDonor)
     dispatch({
       type: EDIT_DONOR_SUCCESS,
       payload: donor

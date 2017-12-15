@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 class DonorListItem extends Component {
-
   render(){
     return (
       <div>

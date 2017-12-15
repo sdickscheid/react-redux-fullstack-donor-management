@@ -14,14 +14,15 @@ module.exports = function(app){
   // Retrieve DONOR details for EDIT FORM ( <DonorEditForm /> )
   app.get('/donor/edit/:id', donor.getDonor);
 
+  // Update DONOR
+  app.post('/donor/update/:id', donor.updateDonor);
+
+
   // Insert/Create NEW DONOR record
   app.post('/donors', donor.createDonor);
 
   // Drop/Delete SINGLE DONOR record
-  app.delete('donor/delete/:id', donor.deleteDonor);
-
-
-
+  app.delete('/donor/delete/:id', donor.deleteDonor);
 
 
                     /***** GIFT ROUTES *****/

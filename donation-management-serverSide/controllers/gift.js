@@ -6,8 +6,8 @@ module.exports = {
   getAll: function(req, res) {
   knex('gifts')
     .then((giftList) =>{
-      console.log(giftlist);
-      res.render('giftlist', {gifts: giftList});
+      console.log(giftList);
+      res.json(giftList);
     })
     .catch((err) => {
       console.error(err)
@@ -20,7 +20,7 @@ module.exports = {
       .where('id', req.params.id)
       .then((gift) => {
         console.log('GIFT to be EDITED', gift);
-        res.render('gift_edit_form', { gift: gift[0] });
+        res.json(gift);
       })
       .catch((err) => {
         console.error(err)
@@ -38,9 +38,9 @@ module.exports = {
         gift_date: req.body.gift_date,
         transaction_type: req.body.transaction_type,
         receipt_status: req.body.receipt_status
-      })
-      .then(() => {
-        res.redirect('/giftlist')
+      }, "*")
+      .then((gift) => {
+        res.json(gift)
       })
       .catch((err) => {
         console.error(err)
@@ -52,8 +52,9 @@ module.exports = {
     knex('gifts')
       .del()
       .where('id', req.params.id)
-      .then(() => {
-        res.redirect('/giftlist');
+      .returning("*")
+      .then((gift) => {
+        res.json(gift);
       })
       .catch((err) => {
         console.error(err)

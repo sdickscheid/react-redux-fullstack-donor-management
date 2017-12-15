@@ -19,12 +19,12 @@ const Home = (props) => {
               to={"/create-new-donor"}
             >Add New Donor</Link>
           </Row>
-          <Row>
+          {/* <Row>
             <Link
               className="btn btn-secondary btns-home-add-new"
               to={"/create-new-gift"}
             >Add New Gift</Link>
-          </Row>
+          </Row> */}
         </Col>
       </Row>
     </Container>

@@ -8,34 +8,12 @@ class GiftList extends Component {
   render() {
 
     let gifts;
-    console.log(gifts);
-    if(!this.props.gifts) {
+
+    console.log('PROPS CAN YOU HEAR ME', this.props);
+    if(this.props.gifts) {
       gifts = this.props.gifts.map(gift => {
         return (
-          <Container>
-            <Row>
-              <Col>
-                <Table hover>
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Donor Name</th>
-                      <th>Program</th>
-                      <th>Gift Amount</th>
-                      <th>Gift Date</th>
-                      <th>Transaction Type</th>
-                      <th>Receipt Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <GiftListItem gift={gift} />
-                    </tr>
-                  </tbody>
-                </Table>
-              </Col>
-            </Row>
-          </Container>
+          <GiftListItem gift={gift} />
         );
       })
     } else {
@@ -71,7 +49,7 @@ class GiftList extends Component {
 
 function mapStateToProps(state, props) {
   return {
-    gifts: state.gifts
+    gifts: state.donorGifts
   }
 }
 

@@ -21,7 +21,7 @@ export default(state = initialState, action) => {
       return state;
 
     case ADD_DONOR_SUCCESS:
-      return [...action.payload.data];
+      return [...state, ...action.payload.data];
 
     case EDIT_DONOR_PENDING:
       return state;

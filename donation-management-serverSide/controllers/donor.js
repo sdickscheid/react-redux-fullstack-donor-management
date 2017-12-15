@@ -46,7 +46,26 @@ module.exports = {
       .catch((err) => {
         console.error(err)
       });
+},
+
+// Update DONOR details with Edits,
+  updateDonor: function(req, res){
+    console.log("**********");
+    console.log(req.body);
+    knex('donors')
+      .update(req.body)
+      .where('id', req.params.id)
+      .then(()=>{
+
+        res.redirect('/donorlist');
+      })
+      .catch((err) => {
+        console.error(err)
+      });
   },
+
+
+
 
   // Insert/Create NEW DONOR record
   createDonor: function(req, res) {
@@ -77,8 +96,11 @@ module.exports = {
     knex('donors')
       .del()
       .where('id', req.params.id)
+      .returning("*")
       .then(() => {
-        res.redirect('/booklist');
+
+        knex('donors')
+          .then(donors => res.json(donors))
       })
       .catch((err) => {
         console.error(err)

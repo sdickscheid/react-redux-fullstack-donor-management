@@ -48,7 +48,7 @@ import {
                 <NavItem>
                   <NavLink className="navbar-links" tag={Link} to="/donation-list">Donation List</NavLink>
                 </NavItem>
-                <NavItem>
+                {/* <NavItem>
                   <NavLink className="navbar-links" tag={Link} to="/create-new-donor">Create Donor</NavLink>
                 </NavItem>
                 <NavItem>
@@ -59,7 +59,7 @@ import {
                 </NavItem>
                 <NavItem>
                   <NavLink className="navbar-links" tag={Link} to="/edit-gift">Edit Gift</NavLink>
-                </NavItem>
+                </NavItem> */}
               </Nav>
             </Collapse>
           </Navbar>
