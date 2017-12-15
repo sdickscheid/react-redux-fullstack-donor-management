@@ -1,6 +1,7 @@
 import React from 'react';
 import DonorList from './DonorList';
 import DonorDetail from './DonorDetail';
+import { Link } from 'react-router-dom';
 // import TopNavBar from './TopNavBar';
 import { Container, Row, Col, Button, FormGroup, Input, } from 'reactstrap';
 
@@ -12,7 +13,14 @@ const DonorListView = (props) => {
         <Col md="3">
           <Row>
             <Col>
-              <Button className="btn-create-donor-dlView">Create New Donor</Button>
+              <Link
+                className="btn btn-secondary btn-create-donor-dlView"
+                to={"/create-new-donor"}
+              >
+                Create New Donor
+              </Link>
+
+              {/* <Button className="btn-create-donor-dlView">Create New Donor</Button>  */}
             </Col>
           </Row>
           <Row>
@@ -31,7 +39,7 @@ const DonorListView = (props) => {
           <Row>
             <Col>
               <FormGroup>
-                <Input type="text" placeholder="Search by donor name here..." />
+                <Input className="search-bar" type="text" placeholder="Search by donor name here..." />
               </FormGroup>
             </Col>
           </Row>

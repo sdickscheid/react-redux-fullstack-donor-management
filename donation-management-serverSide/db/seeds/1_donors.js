@@ -23,6 +23,8 @@ exports.seed = function(knex, Promise) {
 
         {name: 'Marlon Smith', address_1: '69 Shelbourne Place', address_2: '', city_town: 'Surprise', state: 'AZ', zip_code: '09531', phone: '(888) 555-8585', email: 'marlon@young.com', program_interests: 'Homelessness', comments: 'to be added by donor relations staff'},
 
+        {name: 'Betsy McBuggler', address_1: '121 N. 34th Ave.', address_2: 'Suite 300', city_town: 'Phoenix', state: 'AZ', zip_code: '09531', phone: '(888) 326-9900', email: 'betsyrules@mcb.com', program_interests: 'Homelessness', comments: 'to be added by donor relations staff'},
+
         {name: 'Winston Madison', address_1: '647 Garrison Court', address_2: '', city_town: 'Hull', state: 'MA', zip_code: '26276', phone: '(626) 762-1204', email: 'winston@madison.com', program_interests: 'Elder Care', comments: 'to be added by donor relations staff'},
 
         {name: 'Andrew Cappelini', address_1: '54 E. 14th St.', address_2: 'Unit 62B', city_town: 'Phoenix', state: 'AZ', zip_code: '09579', phone: '(408) 300-9786', email: 'andy@cappelini.com', program_interests: 'Homelessness', comments: 'to be added by donor relations staff'},

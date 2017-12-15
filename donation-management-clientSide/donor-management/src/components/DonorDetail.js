@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Table, Button } from 'reactstrap';
 
 const DonorDetail = ({selectedDonor}) => {
@@ -9,7 +10,7 @@ const DonorDetail = ({selectedDonor}) => {
 
     <div className="donor-details-container">
       <div className="donor-details-section">
-        <h5 className="table-title">Donor Information</h5>
+        <h5 className="table-donor-info-title">Donor Information</h5>
         <Table className="donor-detail-table">
           <thead className="donor-table-header-main">
             <tr>
@@ -64,18 +65,24 @@ const DonorDetail = ({selectedDonor}) => {
             </tr>
           </tbody>
         </Table>
-        <div className="btns-div-donor-detail">
-          <Button className="btns-donor-detail" color="secondary">Edit Donor</Button>{' '}
+        <div className="btns-donor-detail-edit-remove">
+          <Link
+            className="btns-donor-detail btn btn-secondary"
+            color="secondary"
+            to={"/edit-donor"}
+          >
+              Edit Donor
+          </Link>{' '}
           <Button className="btns-donor-detail" color="secondary">Remove Donor</Button>{' '}
         </div>
       </div>
 
       <div className="donor-gifts-section">
-        <h5 className="table-title">Donor Donation History</h5>
+        <h5 className="table-donor-gift-title">Donor Donation History</h5>
         <Table className="donor-gift-table">
           <thead className="donor-gift-table-header">
             <tr>
-              <th>Gift ID</th>
+              <th>Gift #</th>
               {/* <th>Donor Name</th> */}
               <th>Program</th>
               <th>Gift Amount</th>
