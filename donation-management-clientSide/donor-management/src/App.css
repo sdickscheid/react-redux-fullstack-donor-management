@@ -1,14 +1,99 @@
+/*#root {
+  background-color: lightblue;
+}*/
+
+.home-welcome-title {
+  text-align: center;
+}
+
+.home-btns-add-new {
+
+}
+
 .nav-bar-container {
   margin-bottom: 10px;
+
+}
+
+.btn-create-donor-dlView {
+  margin-bottom: 15px;
+  width: 100%;
+  height: 34px;
+}
+
+.donor-list-title {
+  text-align: center;
+}
+.donor-list-container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.donor-list-item-container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .donor-list-item {
   border: 1px solid grey;
-  padding-left: 15px;
+  padding: 5px 15px 5px 15px;
   background-color: #eee;
-  width: 100%;
 }
 
 .btn-create-dlView {
   width: 100%;
+}
+
+/* DonorDetails - Tables*/
+.table-title {
+  text-align: center;
+}
+
+.donor-details-section {
+
+}
+.donor-detail-table {
+  border: 2px solid grey;
+}
+
+.donor-table-header-main {
+  font-size: 0.75em;
+}
+
+.donor-table-thead1 {
+  width: 20%;
+}
+
+.donor-table-thead2 {
+  width: 80%;
+}
+
+.donor-col-scope {
+  font-size: .6em;
+}
+
+td {
+  font-size: .6em;
+}
+
+.btns-div-donor-detail {
+  margin: 10px 10px 25px 10px;
+  flex:initial;
+}
+
+.btns-donor-detail {
+  width: 49%;
+  justify-content: space-around;
+}
+
+.donor-gift-table {
+  border: 2px solid grey;
+}
+.donor-gift-table-header {
+  font-size: 0.65em;
+  text-align: center;
+}
+
+.donor-gift-table-body {
+  text-align: center;
 }

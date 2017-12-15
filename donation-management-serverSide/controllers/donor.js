@@ -26,7 +26,8 @@ module.exports = {
           .where('donor_id', req.params.id)
           .then((donorGifts) => {
             console.log('GIFTS BY DONOR', donorGifts);
-            res.json(donor[0], donorGifts);
+            donor[0].gifts = donorGifts;
+            res.json(donor[0]);
           })
           .catch((err) => {
             console.error(err)

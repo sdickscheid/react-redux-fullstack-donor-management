@@ -7,6 +7,7 @@ export const GET_SELECTED_DONOR_SUCCESS = 'GET_SELECTED_DONOR_SUCCESS';
 
 export const getAllDonors = () => {
   return async (dispatch) => {
+    console.log("test *****&******");
     dispatch({ type: GET_DONORS_PENDING})
 
     let donors = await axios.get('http://localhost:8000/donorlist')
@@ -18,10 +19,11 @@ export const getAllDonors = () => {
 }
 
 export const getSelectedDonor = (id) => {
+  console.log(id, "running");
   return async (dispatch) => {
+    console.log("ASDasdasDasdå");
     dispatch({ type: GET_SELECTED_DONOR_PENDING})
-
-    let selectedDonor = await axios.get('http://localhost:8000/donorlist')
+    let selectedDonor = await axios.get('http://localhost:8000/donor/'+id)
     dispatch({
       type: GET_SELECTED_DONOR_SUCCESS,
       payload: selectedDonor,

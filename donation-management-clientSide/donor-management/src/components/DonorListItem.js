@@ -1,29 +1,28 @@
-import React from 'react';
-// import { getSelectedDonor } from '../actions/action_donors';
-// import { bindActionCreators } from 'redux';
-// import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import { getSelectedDonor } from '../actions/action_donors';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-const DonorListItem = ({donor}) => {
+class DonorListItem extends Component {
 
-  console.log('DonorListItem Page', donor);
-  // let id = donor.id
-
-  return (
-    <div>
-      <p
-        key={donor.id}
-        className="donor-list-item">{donor.name}
-      </p>
-    </div>
-  )
+  render(){
+    return (
+      <div>
+        <p
+          key={this.props.donor.id}
+          onClick={() => this.props.getSelectedDonor(this.props.donor.id)}
+          className="donor-list-item">{this.props.donor.name}
+        </p>
+      </div>
+    );
+  }
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     selectedDonor: bindActionCreators(getSelectedDonor, dispatch)
-//   }
-// }
+function mapDispatchToProps(dispatch) {
+  return {
+    getSelectedDonor: bindActionCreators(getSelectedDonor, dispatch)
+  }
+}
 
-  // onClick={() => this.props.getSelectedDonor(id)}
 
-export default DonorListItem;
+export default connect(null, mapDispatchToProps)(DonorListItem);

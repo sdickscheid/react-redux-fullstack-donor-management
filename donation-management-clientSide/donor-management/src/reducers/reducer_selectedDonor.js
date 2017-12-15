@@ -11,7 +11,8 @@ export default(state = initialState, action) => {
       return state;
 
     case GET_SELECTED_DONOR_SUCCESS:
-      return [...action.payload.data];
+      console.log(action.payload.data, "In reducer")
+      return action.payload.data;
 
     default:
       return state;
