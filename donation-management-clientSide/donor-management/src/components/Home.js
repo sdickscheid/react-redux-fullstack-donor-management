@@ -12,12 +12,12 @@ const Home = (props) => {
 
       <Row>
         <Col>
-          <Button className="home-btns-add-new">Add New Donor</Button>
+          <Button className="btns-home-add-new">Add New Donor</Button>
         </Col>
         <Col>
           <Button>Add New Gift</Button>
         </Col>
-      </Row>      
+      </Row>
     </Container>
   )
 }

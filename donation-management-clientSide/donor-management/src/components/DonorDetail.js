@@ -101,7 +101,7 @@ const DonorDetail = ({selectedDonor}) => {
               <td>{selectedDonor.gifts ? selectedDonor.gifts[0].gift_date.slice(0,10): null}</td>
               <td>{selectedDonor.gifts ? selectedDonor.gifts[0].transaction_type: null}</td>
               <td>{selectedDonor.gifts ? selectedDonor.gifts[0].receipt_status: null}</td>
-              <td><a href="#">Edit</a></td>
+              <td><Link to={"/edit-gift"}><i className="fa fa-pencil-square-o"></i></Link></td>
             </tr>
           </tbody>
         </Table>

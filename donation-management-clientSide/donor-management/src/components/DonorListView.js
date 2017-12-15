@@ -14,7 +14,7 @@ const DonorListView = (props) => {
           <Row>
             <Col>
               <Link
-                className="btn btn-secondary btn-create-donor-dlView"
+                className="btn btn-secondary btn-DonorListView-create-donor "
                 to={"/create-new-donor"}
               >
                 Create New Donor

@@ -2,24 +2,19 @@
   background-color: lightblue;
 }*/
 
-.home-welcome-title {
-  text-align: center;
-}
-
-.home-btns-add-new {
+.btns-home-add-new {
 
 }
 
-.nav-bar-container {
-  margin-bottom: 10px;
-}
-
-.btn-create-donor-dlView {
+.btn-DonorListView-create-donor {
   margin-bottom: 15px;
   width: 100%;
   height: 34px;
   vertical-align:middle;
+}
 
+.nav-bar-container {
+  margin-bottom: 10px;
 }
 
 .donor-list-title {
@@ -41,11 +36,11 @@
   background-color: #eee;
 }
 
-.btn-create-dlView {
-  width: 100%;
+.home-welcome-title {
+  text-align: center;
 }
 
-/* DonorDetails - Tables*/
+/* DonorDetails - Table Styling */
 .table-donor-info-title {
   text-align: center;
   margin-top: 5px;
